@@ -1,0 +1,64 @@
+Deals DB design
+
+
+Product
+- productId - primary
+- Name
+- price
+- rating
+- Img_urls
+- video_url
+- page_url
+- categoryId - foreign
+- discount
+- emi_avaliable
+- Warranty
+- Availability
+- Overview_id - description of a product in separate table
+
+Product_desc
+- desc_Id
+- product_id
+- … desc items
+
+Deals
+- dealId - primary
+- productId - foreign
+- name - // “Deal of the day”
+- offer_price
+- min_price
+- max_price
+- deal_heading - // Flat 20% off on Fire TV Stick 4K
+- deal_text
+- type
+- end_in
+
+Category
+- categoryId - primary
+- name - // books, camera, clothing
+
+Reviews_rating
+- reviewId - primary
+- productId - foreign
+- userId - foreign
+- review_heading
+- review_text
+- rating
+- Verified
+- found_helpfull - 1809
+- found_abusive - 23
+- Review_tag
+
+Qna
+- qnaId - primary
+- qna_type - // “q”, “a”, “c” // question, answer, comments
+- product_id
+- parent_id - // answer will have question’s qnaId as parentId, question will have parentId -1
+- Voted - // 5
+- user_id
+
+
+Foreach table
+- time_stamp
+- insert_timestamp
+
